@@ -1,6 +1,6 @@
 # Mopao Gadgets - Electronics eCommerce Shop
 
-This is a modern electronics eCommerce platform that I built from scratch using Next.js, Node.js, and Prisma. I designed, developed, and branded the entire project myself in just 5 days.
+This is a modern electronics eCommerce platform that I built using Next.js, Node.js, and Prisma. Designed, developed, and branded the entire project in 5 days.
 
 ## 🚀 What I Built
 
@@ -29,7 +29,7 @@ This is a modern electronics eCommerce platform that I built from scratch using 
 
 ## 🗂️ Features I Implemented
 
-- **Product Management**: Add, edit, delete products with multiple images
+- **Product Management**: Add, edit, and delete products with multiple images
 - **Category Management**: Organize products
 - **Order Management**: Track customer orders
 - **User Management**: Admin users
@@ -42,7 +42,7 @@ This is a modern electronics eCommerce platform that I built from scratch using 
 1. **Clone the repo**
    ```bash
    git clone <repository-url>
-   cd Electronics-eCommerce-Shop-With-Admin-Dashboard-NextJS-NodeJS
+   cd ...
    ```
 2. **Install dependencies**
    ```bash
@@ -73,6 +73,6 @@ This is a modern electronics eCommerce platform that I built from scratch using 
 
 ## 📄 About
 
-I, and only I, designed and built this entire project in a span of 5 days. Every feature, every line of code, and all the branding was done by me.
+Designed and built this entire project in five days. 
 
 **Mopao Gadgets** - Your trusted electronics partner in Kenya 🇰🇪
