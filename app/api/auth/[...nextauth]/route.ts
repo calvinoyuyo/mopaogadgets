@@ -7,7 +7,7 @@ import bcrypt from "bcryptjs";
 import prisma from "@/utils/db";
 import { nanoid } from "nanoid";
 
-export const authOptions: any = {
+const authOptions: any = {
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
@@ -18,7 +18,6 @@ export const authOptions: any = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any) {
-
         try {
           const user = await prisma.user.findFirst({
             where: {
@@ -31,9 +30,15 @@ export const authOptions: any = {
               user.password!
             );
             if (isPasswordCorrect) {
-              return user;
+              // Return only the fields NextAuth expects (no password)
+              return {
+                id: user.id,
+                email: user.email,
+                role: user.role ?? "user",
+              };
             }
           }
+          return null;
         } catch (err: any) {
           throw new Error(err);
         }
@@ -99,5 +104,5 @@ export const authOptions: any = {
   },
 };
 
-export const handler = NextAuth(authOptions);
+const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
