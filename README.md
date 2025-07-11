@@ -46,7 +46,7 @@ This is a modern electronics eCommerce platform that I built using Next.js, Node
    ```
 2. **Install dependencies**
    ```bash
-   npm install
+npm install
    cd server && npm install
    ```
 3. **Set up the database**
@@ -61,8 +61,8 @@ This is a modern electronics eCommerce platform that I built using Next.js, Node
      ```
    - In the server folder (separate terminal):
      ```bash
-     node app.js
-     ```
+node app.js
+```
 5. **Access the app**
    - Frontend: http://localhost:3000 (or next available port)
    - Admin: http://localhost:3000/admin

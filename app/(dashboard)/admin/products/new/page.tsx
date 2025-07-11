@@ -30,6 +30,8 @@ const AddNewProduct = () => {
   const [additionalImages, setAdditionalImages] = useState<string[]>([]);
   const [uploadedImages, setUploadedImages] = useState<string[]>([]);
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   const addProduct = async () => {
     if (
       product.title === "" ||
@@ -46,7 +48,7 @@ const AddNewProduct = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),
     };
-    fetch(`http://localhost:3001/api/products`, requestOptions)
+    fetch(`${API_URL}/api/products`, requestOptions)
       .then((response) => {
         if (response.status === 201) {
           return response.json();
@@ -85,7 +87,7 @@ const AddNewProduct = () => {
     formData.append("uploadedFile", file);
 
     try {
-      const response = await fetch("http://localhost:3001/api/main-image", {
+      const response = await fetch(`${API_URL}/api/main-image`, {
         method: "POST",
         body: formData,
       });
@@ -106,7 +108,7 @@ const AddNewProduct = () => {
     formData.append("productId", productId);
 
     try {
-      const response = await fetch("http://localhost:3001/api/images", {
+      const response = await fetch(`${API_URL}/api/images`, {
         method: "POST",
         body: formData,
       });
@@ -126,7 +128,7 @@ const AddNewProduct = () => {
     formData.append("uploadedFile", file);
 
     try {
-      const response = await fetch("http://localhost:3001/api/main-image", {
+      const response = await fetch(`${API_URL}/api/main-image`, {
         method: "POST",
         body: formData,
       });
@@ -152,7 +154,7 @@ const AddNewProduct = () => {
   };
 
   const fetchCategories = async () => {
-    fetch(`http://localhost:3001/api/categories`)
+    fetch(`${API_URL}/api/categories`)
       .then((res) => {
         return res.json();
       })

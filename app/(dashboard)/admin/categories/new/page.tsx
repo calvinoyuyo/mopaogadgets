@@ -18,8 +18,9 @@ const DashboardNewCategoryPage = () => {
           name: convertCategoryNameToURLFriendly(categoryInput.name),
         }),
       };
+      const API_URL = process.env.NEXT_PUBLIC_API_URL;
       // sending API request for creating new cateogry
-      fetch(`http://localhost:3001/api/categories`, requestOptions)
+      fetch(`${API_URL}/api/categories`, requestOptions)
         .then((response) => {
           if (response.status === 201) {
             return response.json();

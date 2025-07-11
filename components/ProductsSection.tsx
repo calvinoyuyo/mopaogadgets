@@ -13,8 +13,9 @@ import ProductItem from "./ProductItem";
 import Heading from "./Heading";
 
 const ProductsSection = async () => {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   // sending API request for getting all products
-  const data = await fetch("http://localhost:3001/api/products");
+  const data = await fetch(`${API_URL}/api/products`);
   const products = await data.json();
   return (
     <div className="bg-mopao-grey border-t-4 border-mopao-green">

@@ -11,8 +11,10 @@ const WishlistPage = () => {
   const { data: session, status } = useSession();
   const {wishlist, setWishlist}= useWishlistStore();
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   const getWishlistByUserId = async (id: string) => {
-    const response = await fetch(`http://localhost:3001/api/wishlist/${id}`, {
+    const response = await fetch(`${API_URL}/api/wishlist/${id}`, {
       cache: "no-store",
     });
     const wishlist = await response.json();
@@ -33,7 +35,7 @@ const WishlistPage = () => {
 
   const getUserByEmail = async () => {
     if (session?.user?.email) {
-      fetch(`http://localhost:3001/api/users/email/${session?.user?.email}`, {
+      fetch(`${API_URL}/api/users/email/${session?.user?.email}`, {
         cache: "no-store",
       })
         .then((response) => response.json())
