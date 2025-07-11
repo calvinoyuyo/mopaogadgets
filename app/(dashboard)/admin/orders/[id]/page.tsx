@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 import { DashboardSidebar } from "@/components";
 import { isValidEmailAddressFormat, isValidNameOrLastname } from "@/lib/utils";
 import Image from "next/image";

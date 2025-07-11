@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 import { DashboardSidebar } from "@/components";
 import { isValidEmailAddressFormat } from "@/lib/utils";
 import React, { useEffect, useState } from "react";

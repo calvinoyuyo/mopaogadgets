@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 import { DashboardSidebar } from "@/components";
 import { convertCategoryNameToURLFriendly as convertSlugToURLFriendly } from "@/utils/categoryFormating";
 import Image from "next/image";

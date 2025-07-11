@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 import { CustomButton, DashboardSidebar } from "@/components";
 import { nanoid } from "nanoid";
 import Link from "next/link";

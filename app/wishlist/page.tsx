@@ -1,4 +1,5 @@
 "use client";
+export const dynamic = "force-dynamic";
 import { SectionTitle, WishItem, HotDeals } from "@/components";
 import React, { useEffect, useState } from "react";
 import { useWishlistStore } from "../_zustand/wishlistStore";
