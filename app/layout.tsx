@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Footer, Header } from "@/components";
-import SessionProvider from "@/utils/SessionProvider";
 import Providers from "@/Providers";
-import { getServerSession } from "next-auth";
 import 'svgmap/dist/svgMap.min.css';
 
 const roboto = Roboto({ 
@@ -18,23 +16,19 @@ export const metadata: Metadata = {
   description: "Mopao! - Kenya's trusted source for premium electronics and gadgets. Quality products at competitive prices.",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-
-  const session = await getServerSession();
+}) {
   return (
     <html lang="en">
       <body className={`${roboto.className} font-roboto bg-mopao-bg`}>
-        <SessionProvider session={session}>
+        <Providers>
           <Header />
-          <Providers>
-            {children}
-          </Providers>
+          {children}
           <Footer />
-        </SessionProvider>
+        </Providers>
       </body>
     </html>
   );
