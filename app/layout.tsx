@@ -26,14 +26,16 @@ export default async function RootLayout({
 
   const session = await getServerSession();
   return (
-    <body className={`${roboto.className} font-roboto bg-mopao-bg`}>
-      <SessionProvider session={session}>
-        <Header />
-        <Providers>
-          {children}
-        </Providers>
-        <Footer />
-      </SessionProvider>
-    </body>
+    <html lang="en">
+      <body className={`${roboto.className} font-roboto bg-mopao-bg`}>
+        <SessionProvider session={session}>
+          <Header />
+          <Providers>
+            {children}
+          </Providers>
+          <Footer />
+        </SessionProvider>
+      </body>
+    </html>
   );
 }
